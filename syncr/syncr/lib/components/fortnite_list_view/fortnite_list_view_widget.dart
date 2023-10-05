@@ -1,0 +1,92 @@
+import '/flutter_flow/flutter_flow_theme.dart';
+import '/flutter_flow/flutter_flow_util.dart';
+import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
+import 'package:percent_indicator/percent_indicator.dart';
+import 'package:provider/provider.dart';
+import 'fortnite_list_view_model.dart';
+export 'fortnite_list_view_model.dart';
+
+class FortniteListViewWidget extends StatefulWidget {
+  const FortniteListViewWidget({Key? key}) : super(key: key);
+
+  @override
+  _FortniteListViewWidgetState createState() => _FortniteListViewWidgetState();
+}
+
+class _FortniteListViewWidgetState extends State<FortniteListViewWidget> {
+  late FortniteListViewModel _model;
+
+  @override
+  void setState(VoidCallback callback) {
+    super.setState(callback);
+    _model.onUpdate();
+  }
+
+  @override
+  void initState() {
+    super.initState();
+    _model = createModel(context, () => FortniteListViewModel());
+
+    WidgetsBinding.instance.addPostFrameCallback((_) => setState(() {}));
+  }
+
+  @override
+  void dispose() {
+    _model.maybeDispose();
+
+    super.dispose();
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    context.watch<FFAppState>();
+
+    return Row(
+      mainAxisSize: MainAxisSize.max,
+      mainAxisAlignment: MainAxisAlignment.spaceAround,
+      children: [
+        ClipRRect(
+          borderRadius: BorderRadius.circular(8.0),
+          child: Image.asset(
+            'assets/images/forrrrrrr.png',
+            width: 100.0,
+            height: 100.0,
+            fit: BoxFit.cover,
+          ),
+        ),
+        Column(
+          mainAxisSize: MainAxisSize.max,
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Text(
+              'Fortnite',
+              style: FlutterFlowTheme.of(context).titleSmall,
+            ),
+            Container(
+              width: 200.0,
+              child: LinearPercentIndicator(
+                percent: 0.33,
+                lineHeight: 20.0,
+                animation: true,
+                animateFromLastPercent: true,
+                progressColor: FlutterFlowTheme.of(context).error,
+                backgroundColor: FlutterFlowTheme.of(context).secondaryText,
+                center: Text(
+                  '33%',
+                  style: FlutterFlowTheme.of(context).headlineSmall.override(
+                        fontFamily: 'GamerFont',
+                        fontSize: 15.0,
+                        useGoogleFonts: false,
+                      ),
+                ),
+                barRadius: Radius.circular(15.0),
+                padding: EdgeInsets.zero,
+              ),
+            ),
+          ].divide(SizedBox(height: 5.0)),
+        ),
+      ],
+    );
+  }
+}

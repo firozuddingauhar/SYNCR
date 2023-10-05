@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "609066387611",
+    "project_id": "syncr-a824b",
+    "storage_bucket": "syncr-a824b.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:609066387611:android:489e2343f7d20b1377de3e",
+        "android_client_info": {
+          "package_name": "com.mycompany.syncr"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBIsFgLHFjCQk-boBQG5M3kdLiREH_7pMo"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
